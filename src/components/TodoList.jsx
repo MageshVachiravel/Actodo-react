@@ -1,22 +1,9 @@
-import { useState } from "react"
 import ListItem from "./ListItem"
 
-function TodoList(){
+function TodoList(props){
 
-    const [listArr,setListArr] = useState([
-        {
-            id:1,
-            todo:"Go to gym"
-        },
-        {
-            id:2,
-            todo:"Read book 10 Pages"
-        },
-        {
-            id:3,
-            todo:"Eat heathly food"
-        }
-    ])
+    const listArr = props.listArr
+    const setListArr = props.setListArr
 
     return(
         <div className="bg-[#8770e1b9] px-5 py-2.5 border rounded flex-grow">

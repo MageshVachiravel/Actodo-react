@@ -1,10 +1,12 @@
 import TodoForm from "./TodoForm"
 import TodoList from "./TodoList"
+import { useState } from "react"
 function TodoContainer(){
+    const [listArr,setListArr] = useState([])
     return(
         <div className="flex gap-5 flex-wrap">
-            <TodoForm/>
-            <TodoList/>
+            <TodoForm listArr={listArr} setListArr={setListArr}/>
+            <TodoList listArr={listArr} setListArr={setListArr}/>
         </div>
     )
 }

@@ -18,7 +18,7 @@ function ListItem(props){
 
     return(
         <div className="flex justify-between p-1">
-        <p>{props.index+1}. {props.todo} </p>
+        <p className="text-lg">{props.index+1}. {props.todo} </p>
         <button className="text-red-600 text-md" onClick={()=> handleDelete(props.id)}>Delete</button>
         </div>
     )
