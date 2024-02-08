@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="bg-black p-10">
       <div className="bg-white p-10 border rounded-lg">
+
           <Header />
 
           <div className="flex justify-between flex-wrap gap-3 my-5">
@@ -15,6 +16,7 @@ function App() {
           </div>
 
           <TodoContainer />
+      
       </div>
     </div>
   );
