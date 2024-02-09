@@ -1,25 +1,30 @@
-import Header from "./components/Header";
-import Card from "./components/Card";
-import TodoContainer from "./components/TodoContainer";
+import { BrowserRouter , Route , Routes } from "react-router-dom"
+import Landing from "./pages/Landing"
+import Signup from "./pages/Signup"
+import Login from "./pages/Login"
+import { useState } from "react"
 
-function App() {
-  return (
-    <div className="bg-black p-10">
-      <div className="bg-white p-10 border rounded-lg">
 
-          <Header />
+function App(){
+  const [userDetails,setUserDetails] = useState([
+      {
+          username:"magesh",
+          password:12345
+      }
+  ]) 
 
-          <div className="flex justify-between flex-wrap gap-3 my-5">
-            <Card color="#8272DA" title="20" subTitle="Chennai" />
-            <Card color="#FD6663" title="December" subTitle="14:06:45" />
-            <Card color="#FCA201" title="Built using" subTitle="React" />
-          </div>
+  return(
+  <div>
+    <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Login userDetails={userDetails} setUserDetails={setUserDetails}/>}></Route>
+            <Route path='/signup' element={<Signup userDetails={userDetails} setUserDetails={setUserDetails}/>}></Route>
+            <Route path='/landing' element={<Landing/>}></Route>
+        </Routes>
+    </BrowserRouter>
+  </div>
+  )
 
-          <TodoContainer />
-      
-      </div>
-    </div>
-  );
 }
 
-export default App;
+export default App
